@@ -12,9 +12,16 @@ export class UsersService {
     }
 
 
-    async update(id: number, data: any) {
-
-        return prisma.user.update({ where: { id }, data });
+    async update(id: number, data: { email: string; name?: string; password?: string }) {
+        const oldUser = await prisma.user.findUnique({ where: { id } });
+        return prisma.user.update({
+            where: { id },
+            data: {
+                email: data.email || oldUser?.email,
+                name: data.name || oldUser?.name,
+                password: data.password || oldUser?.password,
+            },
+        });
     }
 
     async remove(id: number) {
