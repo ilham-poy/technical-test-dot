@@ -99,8 +99,9 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 **Pattern: Modular**
 
-- **Why:** The project uses the modular pattern (separate `Auth`, `Users`, and `Products` modules) to keep features isolated, testable, and easy to maintain. Each module encapsulates its controllers, services, and related logic so teams can work independently and components can be reused or replaced with minimal impact.
-- **How it satisfies requirements:** JWT authentication is implemented in the `Auth` module; `Users` and `Products` modules implement CRUD backed by Prisma (MySQL). E2E tests verify the token flow.
+- **Alasan:** Proyek ini menggunakan pola modular (modul `Auth`, `Users`, dan `Products` yan -  g terpisah) untuk menjaga agar fitur-fitur tetap terisolasi, dapat diuji, dan mudah dipelihara. Setiap modul mengenkapsulasi pengontrol, layanan, dan logika terkaitnya sehingga tim dapat bekerja secara mandiri dan komponen-komponen dapat digunakan kembali atau diganti dengan dampak minimal.
+- **Bagaimana pola ini memenuhi persyaratan:** Otentikasi JWT diimplementasikan di modul `Auth`; modul `Users` dan `Products` mengimplementasikan operasi CRUD menggunakan Prisma. Pengujian end-to-end (E2E) memverifikasi alur token.
+
 
 **Run e2e token test**
 
